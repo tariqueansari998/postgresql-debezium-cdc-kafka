@@ -44,7 +44,7 @@ curl --location 'localhost:8083/connectors/' \
 ```
 
 Now listen to the topic postgres.public.product using below command
-
+Note the default network created can be checked using the command docker networks
 ```
 docker run --tty --network postgresql-debezium-kafka-poc_default confluentinc/cp-kafkacat kafkacat -b kafka:9092 -C -s key=s -s value=avro -r http://schema-registry:8081 -t postgres.public.product
 ```
